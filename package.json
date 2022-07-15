@@ -1,0 +1,29 @@
+{
+  "name": "cypress_with_allure",
+  "version": "1.0.0",
+  "description": "Cypress with allure-report",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open",
+    "test:file": "npx cypress run -s 'cypress/e2e/spec/google-search.cy.ts'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AZANIR/cypressAllure.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AZANIR/cypressAllure/issues"
+  },
+  "homepage": "https://github.com/AZANIR/cypressAllure#readme",
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.28.0",
+    "allure-commandline": "^2.18.1",
+    "cypress": "^10.3.0",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@types/typescript": "^2.0.0"
+  }
+}

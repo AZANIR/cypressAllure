@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "lib": ["es2016", "dom"],
+    "types": ["cypress", "node"],
+    "baseUrl": "./"
+  },
+  "include": ["**/*.*.ts"],
+  "esModuleInterop": true,
+  "forceConsistentCasingInFileNames": true,
+  "strict": true,
+  "skipLibCheck": true 
+}
