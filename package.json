@@ -1,17 +1,29 @@
 {
-  "name": "cypress_with_allure",
+  "name": "cypress-e2e-typescript-allure",
   "version": "1.0.0",
-  "description": "Cypress with allure-report",
+  "description": "\"Automation Testing framework using cypress and typescript with allure-report\"",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress open",
-    "test:file": "npx cypress run -s 'cypress/e2e/spec/google-search.cy.ts'"
+    "cy:e2e:run": "npm run clear && npm run cy:run && npm run report",
+    "cy:open": "cypress open --config-file config/config.config.ts --env allure=true",
+    "cy:run": "cypress run --config-file config/config.config.ts --env allure=true",
+    "report": "npx allure generate reports/ui/allure-results --clean -o reports/ui/allure-report && allure open reports/ui/allure-report",
+    "clear": "rm -r reports/** || true"
   },
+  "keywords": [
+    "cypress",
+    "typescript",
+    "allure",
+    "e2e",
+    "testing",
+    "automation",
+    "testing"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AZANIR/cypressAllure.git"
   },
-  "author": "",
+  "author": "Leonid Maievskyi",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/AZANIR/cypressAllure/issues"
@@ -22,8 +34,5 @@
     "allure-commandline": "^2.18.1",
     "cypress": "^10.3.0",
     "typescript": "^4.7.4"
-  },
-  "dependencies": {
-    "@types/typescript": "^2.0.0"
   }
 }

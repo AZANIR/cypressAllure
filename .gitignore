@@ -4,3 +4,4 @@ videos
 reports
 screenshots
 cypress/downloads
+reports/**

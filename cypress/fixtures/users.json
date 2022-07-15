@@ -1,0 +1,20 @@
+{
+    "valid_credentials": {
+        "emailId": "testautomation@cypresstest.com",
+        "password": "Test@1234"
+    },
+    "invalid_credentials": {
+        "invalid_email": {
+            "emailId": "invalidUser@cypresstest.com",
+            "password": "Test@1234"
+        },
+        "invalid_password": {
+            "emailId": "testautomation@cypresstest.com",
+            "password": "test@12345"
+        },
+        "wrong_email_format": {
+            "emailId": "testautomationresstest.com",
+            "password": "test@12345"
+        }
+    }
+}
