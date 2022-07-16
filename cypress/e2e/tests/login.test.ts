@@ -1,14 +1,14 @@
 import { loginPage } from '../pages/loginPage'
 import { myAccountPage } from '../pages/myAccountPage'
 
-describe('Login Functionality', () => {
+describe.skip('Login Functionality', () => {
     beforeEach(() => {
         loginPage.launchApplication()
         cy.fixture('users.json').then(function (data) {
             this.data = data;
         })
     })
-    it.only('login with valid credentials', function () {
+    it('login with valid credentials', function () {
         loginPage.login("testautomation@cypresstest.com", "Test@1234")
         myAccountPage.validateSuccessfulLogin()
         myAccountPage.logout()
