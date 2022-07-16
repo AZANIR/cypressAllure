@@ -17,7 +17,8 @@ jobs:
               with:
                   config-file: config/config.config.ts
               if: always()
-            - run: ls config/
+            - run: read -t 2
+            - run: ls
             - run: npm run allure:generate
             - name: Upload artifact allure-report
               uses: actions/upload-artifact@v1
