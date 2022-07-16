@@ -8,7 +8,7 @@ describe('Login Functionality', () => {
             this.data = data;
         })
     })
-    it('login with valid credentials', function () {
+    it.only('login with valid credentials', function () {
         loginPage.login("testautomation@cypresstest.com", "Test@1234")
         myAccountPage.validateSuccessfulLogin()
         myAccountPage.logout()
