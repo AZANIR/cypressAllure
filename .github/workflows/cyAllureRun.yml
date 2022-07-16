@@ -17,7 +17,7 @@ jobs:
               with:
                   config-file: config/config.config.ts
             - run: ls
-            - run: npx allure generate reports/ui/allure-results --clean
+            - run: npx allure generate ./reports/ui/allure-results --clean
             - run: ls
             - name: Upload artifact allure-report
               uses: actions/upload-artifact@v1
