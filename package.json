@@ -8,7 +8,7 @@
     "cy:open": "cypress open --config-file config/config.config.ts --env allure=true",
     "cy:run": "cypress run --config-file config/config.config.ts --env allure=true",
     "report": "npx allure generate reports/ui/allure-results --clean -o reports/ui/allure-report && allure open reports/ui/allure-report",
-    "allure:generate": "npx allure generate allure-results --clean",
+    "allure:generate": "npx allure generate ./allure-results --clean",
     "clear": "rm -r reports/** || true"
   },
   "keywords": [
