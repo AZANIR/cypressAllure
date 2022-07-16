@@ -26,4 +26,10 @@
 
 -   npm install
 
--   npm run cy:e2e:run
+-   npm run cy:run
+
+---
+
+**Report view**
+
+<img width="388" alt="Allure report" src="https://i.imgur.com/6mIIpzz.png">
