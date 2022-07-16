@@ -15,7 +15,8 @@ jobs:
             - name: Cypress run
               uses: cypress-io/github-action@v4
               with:
-                  config-file: config/config.config.ts --env allure=true
+                  config-file: config/config.config.ts
+              env: allure=true
               if: always()
             - run: read -t 2
             - run: ls
