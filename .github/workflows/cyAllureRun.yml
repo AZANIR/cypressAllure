@@ -16,9 +16,9 @@ jobs:
               uses: cypress-io/github-action@v4
               with:
                   config-file: config/config.config.ts
-            - run: ls
+              if: always()
             - run: npx allure generate reports/ui/allure-results --clean
-            - run: ls
+            - run: ls allure-report/
             - name: Upload artifact allure-report
               uses: actions/upload-artifact@v1
               if: always()
