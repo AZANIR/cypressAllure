@@ -5,22 +5,26 @@ on:
         branches: [master]
 
 jobs:
-    cypress-run:
-        name: Cypress run
-        runs-on: ubuntu-20.04
+    Run_test:
+        runs-on: ubuntu-20.04 # Choosing OS
+        strategy:
+            matrix:
+                node-version: [14.17.0]
+                # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
         steps:
-            - name: Checkout
-              uses: actions/checkout@v2
-
-            - name: Cypress run
-              uses: cypress-io/github-action@v4
+            - uses: actions/checkout@v2
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v2
               with:
-                  config-file: config/config.config.ts
-              env: allure=true
+                  node-version: ${{ matrix.node-version }}
+                  cache: "npm"
+            - run: npm i npm@latest
+            - run: npm i
+            - name: run test
+              run: npm run cy:run
+            - name: Create Report
               if: always()
-            - run: read -t 2
-            - run: ls
-            - run: npm run allure:generate
+              run: npm run allure:generate
             - name: Upload artifact allure-report
               uses: actions/upload-artifact@v1
               if: always()
@@ -34,4 +38,4 @@ jobs:
                   ACCESS_TOKEN: ${{'secrets.ACCESS_TOKEN'}}
                   BRANCH: master # The branch the action should deploy to.
                   FOLDER: allure-report # The folder the action should deploy.
-                  TARGET_FOLDER: docs # The folder the action should deploy to.
+                  TARGET_FOLDER: docs

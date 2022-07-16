@@ -1,7 +1,7 @@
 import { loginPage } from '../pages/loginPage'
 import { myAccountPage } from '../pages/myAccountPage'
 
-describe.skip('Login Functionality', () => {
+describe('Login Functionality', () => {
     beforeEach(() => {
         loginPage.launchApplication()
         cy.fixture('users.json').then(function (data) {
