@@ -11,7 +11,7 @@ export default defineConfig({
   screenshotsFolder: 'reports/screenshots',
   videosFolder: 'reports/videos',
   env: {
-    allureResultsPath: '../reports/ui/allure-results',
+    allureResultsPath: '../allure-results',
   },
   e2e: {
     // We've imported your old cypress plugins here.

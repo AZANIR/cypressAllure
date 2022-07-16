@@ -17,14 +17,13 @@ jobs:
               with:
                   config-file: config/config.config.ts
               if: always()
-            - run: npx allure generate reports/ui/allure-results --clean
-            - run: ls allure-report/
+            - run: npm run allure:generate
             - name: Upload artifact allure-report
               uses: actions/upload-artifact@v1
               if: always()
               with:
                   name: allure-report
-                  path: allure-report
+                  path: ./allure-report
             - name: Deploy report
               uses: JamesIves/github-pages-deploy-action@3.1.0
               if: always()
